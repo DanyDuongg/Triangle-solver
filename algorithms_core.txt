@@ -1,0 +1,37 @@
+know bisector A and AC and AB
+BC = sqrt((AB * AC * ((AB + AC) * (AB + AC) - pow(BisectorA, 2))) / (AB + AC));
+
+    // Corrected formula for BisectorB
+    BisectorB = sqrt(AB * BC * (1 - pow(AC, 2) / pow(AB + BC, 2)));
+
+    // Corrected formula for BisectorC
+    BisectorC = sqrt(AC * BC * (1 - pow(AB, 2) / pow(AC + BC, 2)));
++ AC=sqrt(((BC*AB-pow(lb,2)*pow(BC+AB,2))/(AB*BC))
++ AB= sqrt(((BC*AC-pow(lc,2)*pow(BC+AC,2))/(AC*BC))
+AB = (-la*AC)/(la-2*AC*cos(angleA/2))
+ha = 2*Area / BC
+hb = 2*Area / AC
+hc = 2*Area / AB
+BisectorA = sqrt(AB*AC * ( (1-(pow(BC,2))/(pow(AC+AB,2)) ) )
+BisectorB = sqrt(BC*AB * ( (1-(pow(AC,2))/(pow(AB+BC,2)) ) )
+Bisector C = sqrt(AC*BC * ( (1-(pow(AB,2))/(pow(AC+BC,2)) ) )
+
+         double semiPerimeter = (AB + AC + BC) / 2;
+        Area = sqrt(semiPerimeter * (semiPerimeter - AB) * (semiPerimeter - AC) * (semiPerimeter - BC));
+
+// Calculate the circumradius
+        circumRadius = (AB * BC * AC) / (4 * Area);
+        auto [A, B, C] = calculate_3Angles(AB, AC, BC);
+        angleA=A;
+        angleB=B;
+        angleC=C;
+        BisectorC = sqrt(AC * BC * (1 - pow(AB, 2) / pow(AC + BC, 2)));
+        BisectorA = sqrt(AB * AC * (1 - pow(BC, 2) / pow(AB + AC, 2)));
+        BisectorB = sqrt(AB * BC * (1 - pow(AC, 2) / pow(AB + BC, 2)));
+
+
+// Calculate the inradius
+        inRadius = Area / semiPerimeter;
+        median_AM=0.5*sqrt(2*pow(AB,2)+2*pow(AC,2)-pow(BC,2));
+        median_BM=0.5*sqrt(2*pow(AB,2)+2*pow(BC,2)-pow(AC,2));
+        median_CM=0.5*sqrt(2*pow(BC,2)+2*pow(AC,2)-pow(AB,2));
